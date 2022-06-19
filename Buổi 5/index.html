@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="students"></div>
+    <script>
+      localStorage.setItem("name", "hoho");
+      localStorage.setItem("name1", "h11");
+      console.log(localStorage.getItem("name"));
+      localStorage.removeItem("name1");
+
+      let students = [
+        {
+          name: "Test",
+          age: 18,
+        },
+        {
+          name: "Test2",
+          age: 18,
+        },
+      ];
+      localStorage.setItem("student", JSON.stringify(students));
+      let a = JSON.stringify(students);
+      console.log(a);
+      let b = JSON.parse(a);
+      console.log(b);
+
+      document.addEventListener("DOMContentLoaded", function () {
+        console.log("DOM fully loaded and parsed");
+        renderPro() 
+      });
+
+     
+      function renderPro() {
+        var html = "";
+        for (var i = 0; i < students.length; i++) {
+          var student = students[i];
+          html += "<h2>" + student.name + "</h2>";
+          html += "<p>" + student.age + "</p>";
+        }
+        console.log("hihi",html);
+        document.getElementById('students').innerHTML = html
+      }
+
+      
+    </script>
+  </body>
+</html>
