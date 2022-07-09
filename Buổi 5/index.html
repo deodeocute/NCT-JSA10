@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+    // Ôn tập array và object 
+    //  1. array 
+    //  là mảng, dùng để lưu trữ dữ liệu và có thứ tự
+    // - cú pháp: [1, "string", null, array, object, bool]
+    let arr = ["một", "hai", "ba", "bốn"]
+        console.log(arr)
+        console.log(arr.length)
+    //  2. object 
+    //  - là đối tượng bao gồm các tập chứa key và value 
+    //  - cú pháp : {name :"Quỳnh", add: "HN"}
+    let ob =  {name :"Quỳnh",
+               add: "HN"}
+        console.log(ob.name);
+    
+    // JSON là gì ? - là một kiểu định dạng dữ liệu
+    var arrJson = ' ["một","hai",1,"True", "False"] '
+    var json = '{"name":"Quỳnh", "add":"HN"}'
+    // đổi từ json sang js
+    console.log(JSON.parse(json));
+    console.log(JSON.parse(arrJson));
+
+    // đổi từ js sang json
+    console.log(JSON.stringify(arr));
+    console.log(JSON.stringify(ob));
+
+    let obInArr = [
+        {name : "Quang"},
+        {name: "Bắc"},
+        {name: "Nhân"}
+    ]
+    let arrInOb ={
+        name: ["Quang", "Huy", "Sơn"],
+        age : [1,2,3]
+    }
+    console.log(obInArr[2].name); 
+    console.log(arrInOb.name[1]);
+
+    localStorage.setItem("name", "Quỳnh")
+    localStorage.setItem("age", 10)
+    localStorage.setItem("obInArr", JSON.stringify(obInArr))
+    localStorage.setItem("arrInOb", JSON.stringify(arrInOb))
+
+    console.log(localStorage.getItem("name")); 
+    console.log(localStorage.getItem("obInArr")); 
+    console.log(JSON.parse(localStorage.getItem("arrInOb"))); 
+
+    localStorage.removeItem("age")
+
+    // 1. Lưu thông tin cá nhân của mình bằng dạng object (có chứa name, age, day of birth) 
+    // và đẩy lên localStorage theo key tương ứng (chính là tên object)
+    // 2. Lấy thông tin từ localStorage và console.log ra theo đúng định dạng JS
+
+    </script>
+</body>
+</html>
