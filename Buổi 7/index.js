@@ -28,7 +28,7 @@ check = (name, age) => {
     const e = 22
     console.log(c);
     console.log(d);
-    console.log(name,age);
+    console.log(name, age);
 }
 check('Quỳnh', 'k biết')
 // console.log(c);
@@ -48,3 +48,4 @@ var thuongHieu = "NIIT";
 console.log(thuongHieu + " thành lập năm: " + namThanhLap);
 // Khai báo và khởi tạo biến namThanhlap
 var namThanhLap = 2002;
+console.log(thuongHieu + " thành lập năm: " + namThanhLap);

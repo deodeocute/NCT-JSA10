@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=sc, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      students = (name, age, address) => {
+        let student = {
+          name: name,
+          age: age,
+          address: address,
+        };
+        console.log(student);
+      };
+      students("Quỳnh", "no age", "Hà Nội");
+
+      var smartPhones = [
+        { name: "iphone", price: 649 },
+        { name: "Galaxy S6", price: 576 },
+        { name: "Galaxy Note 5", price: 489 },
+      ];
+      
+      let mapSmartPhone = smartPhones.map((item, index) => item[index])
+      console.log(mapSmartPhone);
+
+      smartPhonesFunc = () => {
+        for (let i = 0; i < smartPhones.length; i++) {
+          console.log(
+            "name: ",
+            smartPhones[i].name,
+            ", price: ",
+            smartPhones[i].price
+          );
+        }
+      };
+      smartPhonesFunc();
+
+      fetch(
+        "https://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline")
+        .then(function (response) {
+          if (response.status !== 200) {
+            console.log("Lỗi, mã lỗi " + response.status);
+            return;
+          }
+          // parse response data
+          response.json().then((data) => {
+            console.log(data);
+          });
+        })
+        .catch((err) => {
+          console.log("Error :-S", err);
+        });
+    </script>
+  </body>
+</html>
